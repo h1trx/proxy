@@ -1,8 +1,11 @@
 import express from "express";
 import fetch from "node-fetch";
+import dotenv from "dotenv"
+
+dotenv.config()
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000
 
 app.get("/proxy", async (req, res) => {
   const { url } = req.query;
